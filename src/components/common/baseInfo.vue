@@ -41,8 +41,8 @@
           </a>
         </li>
         <li>
-          <a href="mailto:1806242240@qq.com" target="_blank">
-            <span class="contact-link">1806242240@qq.com</span>
+          <a href="mailto:zhang_guoyi@qq.com" target="_blank">
+            <span class="contact-link">zhang_guoyi@qq.com</span>
             <span class="iconfont">
               <svg width="16px" height="16px" viewBox="0 0 1024 1024">
                 <path
