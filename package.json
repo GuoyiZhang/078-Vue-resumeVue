@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "vue": "^2.5.2",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "vue-router": "^3.0.1",
     "sass": "^1.23.0"
   },
