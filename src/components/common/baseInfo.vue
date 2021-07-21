@@ -11,7 +11,7 @@
     <section class="info">
       <ul>
         <li>男 / 1995.12</li>
-        <li>河南理工大学（万方科技学院）</li>
+        <li>河南理工大学-万方科技学院</li>
         <li>电子信息工程</li>
         <li>本科 / 2018年6月毕业</li>
       </ul>
@@ -52,8 +52,8 @@
           </a>
         </li>
         <li>
-          <a href="tel:17809298760" target="_blank">
-            <span class="contact-link">17809298760</span>
+          <a href="tel:17788058770" target="_blank">
+            <span class="contact-link">17788058770</span>
             <span class="iconfont">
               <svg width="16px" height="16px" viewBox="0 0 1024 1024">
                 <path
