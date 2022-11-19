@@ -26,10 +26,18 @@ export default {
     },
     getPdf(title, html) {
       console.log("html", html);
-      // const h3 = document.createElement('h3')
-      // h3.innerText = "本PDF文件生成自 http://www.guoyi.pro";
-      // h3.style.cssText="padding :10px; text-align: center;color: #999;"
-      // html.appendChild(h3)
+      const h3 = document.createElement('h3')
+      h3.innerText = "本PDF文件生成自 http://www.guoyi.pro";
+      h3.style.cssText = "padding: 10px;\n" +
+        "    text-align: center;\n" +
+        "    color: hsl(0deg 0% 0% / 15%);\n" +
+        "    position: fixed;\n" +
+        "    top: 60vh;\n" +
+        "    left: calc(50vw - 350px);\n" +
+        "    z-index: 11111111;\n" +
+        "    font-size: 40px;\n" +
+        "    transform: rotate(315deg);"
+      html.appendChild(h3)
       // 使用html2canvas 转换html为canvas
       html2Canvas(html, {
         allowTaint: true,
