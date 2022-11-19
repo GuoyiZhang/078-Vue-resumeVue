@@ -19,7 +19,7 @@
 
 ``` bash
 # 安装依赖包
-npm install
+npm install --registry=https://registry.npm.taobao.org
 
 # 启动程序
 npm run dev

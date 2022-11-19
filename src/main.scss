@@ -19,8 +19,8 @@ body {
   -webkit-text-size-adjust: none;
   background-color: #eee;
   overflow: auto;
-  padding-top: 5px;
-  @media screen and (max-width: 1024px) {
+  padding-top: 0px;
+  @media screen and (max-width: 1200px) {
     padding-top: 0;
   }
 }
@@ -31,13 +31,57 @@ a {
   @include transition(all .2s ease-in-out);
 }
 
+.head {
+  position: relative;
+  height: 20px;
+  top: 40px;
+  width: 1200px;
+  margin: 0px auto;
+  display: flex;
+  justify-content: space-between;
+  @media screen and (max-width: 1200px) {
+    display: none;
+  }
+}
+
+.avatars-div {
+  margin-right: 30px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 0;
+  @media screen and (max-width: 1200px) {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+    margin-right: 0;
+    //display: none;
+  }
+}
+
+.avatars {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  @media screen and (max-width: 1200px) {
+    text-align: center;
+    //display: none;
+  }
+}
+
 .last-modified {
-  position: absolute;
-  top: 30px;
-  left: 50%;
-  width: 1000px;
   color: #bbb;
-  margin-left: -500px;
+  font-size: 12px;
+  text-align: right;
+  @media screen and (max-width: 1200px) {
+    display: none;
+  }
+  @media print {
+    display: none;
+  }
+}
+
+.download-pdf {
+  color: #bbb;
   font-size: 12px;
   text-align: right;
   @media screen and (max-width: 1024px) {
@@ -48,20 +92,8 @@ a {
   }
 }
 
-.download-pdf {
-  position: absolute;
-  top: 30px;
-  left: 50%;
-  color: #bbb;
-  margin-left: -500px;
-  font-size: 12px;
-  text-align: right;
-  @media screen and (max-width: 1024px) {
-    display: none;
-  }
-  @media print {
-    display: none;
-  }
+.download-pdf:hover {
+  cursor: pointer;
 }
 
 .content {
@@ -71,7 +103,7 @@ a {
   @include border-radius(5px);
   background-color: #fff;
   overflow: hidden;
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1200px) {
     width: 100%;
     margin: 0;
     @include border-radius(0);
@@ -85,12 +117,22 @@ a {
   background-color: #1fc8db;
   background-image: linear-gradient(141deg, #c25dec 0%, #198cde 51%, #3591e0 80%);
   overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   @media screen and (max-width: 720px) {
     padding: 25px 30px;
   }
   @media print {
     color: #000;
     background-color: #fff;
+  }
+
+  @media screen and (max-width: 1200px) {
+    width: 100%;
+    flex-direction: column;
+    margin: 0;
+    @include border-radius(0);
   }
 
   .title {
@@ -238,7 +280,7 @@ a {
   .content-left,
   .content-right {
     width: 50%;
-    @media screen and (max-width: 1024px) {
+    @media screen and (max-width: 1200px) {
       width: 100%;
     }
   }
@@ -246,7 +288,7 @@ a {
   .content-left {
     float: left;
     border-right: 1px solid #ededed;
-    @media screen and (max-width: 1024px) {
+    @media screen and (max-width: 1200px) {
       border-right: none
     }
   }
@@ -296,8 +338,28 @@ a {
         .project-name {
           display: inline;
           font-weight: bold;
-          font-size: 14px;
-          line-height: 22px;
+          font-size: 15px;
+          line-height: 1.8rem;
+        }
+
+        .div-project-item {
+          margin-left: 10px;
+          margin-bottom: 5px;
+
+          .project-des {
+            font-size: 13px;
+            padding: 4px 0px;
+          }
+
+          .item-project-des {
+            background: #f5f5f5;
+            border-radius: 6px;
+            padding: 4px 8px;
+            color: #5f5f5f;
+            font-family: "等线";
+            font-size: 13px;
+            line-height: 1.5rem;
+          }
         }
       }
 
@@ -372,6 +434,7 @@ a {
   }
 
   .item-hd {
+    width: 100%;
     position: relative;
     padding: 10px 0;
     line-height: 20px;
@@ -379,27 +442,45 @@ a {
     font-weight: 500;
     min-height: 30px;
     margin-bottom: 5px;
+    display: flex;
+    align-items: center;
 
-    .item-time {
-      display: inline-block;
-      float: left;
-      width: 25%;
-      @media screen and (max-width: 720px) {
-        width: 100%;
-        margin-bottom: 5px;
+
+    .open {
+      height: 16px;
+      width: 16px;
+    }
+
+    .company-des {
+      flex: 1;
+      margin-left: 15px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+
+      .item-name {
+        float: left;
+        font-size: 16px;
+        line-height: 2.2rem;
+        font-weight: bold;
+      }
+
+      .item-time {
+        display: inline-block;
+        float: left;
+        @media screen and (max-width: 720px) {
+          width: 100%;
+          margin-bottom: 5px;
+        }
       }
     }
 
     .item-more {
-      position: absolute;
-      top: 10px;
-      right: 0;
     }
 
-    .item-name {
-      float: left;
-      font-size: 15px;
-      font-weight: bold;
+    .item-more-right {
+      position: absolute;
+      right: 0;
     }
 
 
@@ -425,7 +506,11 @@ a {
     .project-des {
       font-size: 13px;
       padding: 4px 0px;
-      margin-left: -10px;
+    }
+
+    .project-name-2 {
+      line-height: 1.2rem;
+      margin-bottom: 4px;
     }
   }
 
@@ -507,7 +592,7 @@ a {
     display: inline-block;
     color: $color-gray;
     margin-bottom: 25px;
-    @media screen and (max-width: 1024px) {
+    @media screen and (max-width: 1200px) {
       margin-top: 25px;
     }
   }
