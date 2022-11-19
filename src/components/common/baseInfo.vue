@@ -1,18 +1,18 @@
 <template>
   <header class="content-hd">
-    <div class="avatars-div">
+    <div class="avatars-div animate__animated animate__flip">
       <img src="https://avatars.githubusercontent.com/u/17961901?v=4" class="avatars">
     </div>
     <div style="flex: 1;width: 100%">
-      <section class="title">
-        <div class="name">
+      <section class="title ">
+        <div class="name animate__animated animate__fadeInDown">
           <h1>张国毅</h1>
         </div>
-        <div class="job">
+        <div class="job animate__animated animate__fadeInDown">
           <h2>区块链开发工程师 | 全栈工程师</h2>
         </div>
       </section>
-      <section class="info">
+      <section class="info animate__animated animate__fadeInLeft">
         <ul>
           <li>男 / 1995.12</li>
           <li>河南理工大学万方科技学院</li>
@@ -20,7 +20,7 @@
           <li>本科 / 2018年6月毕业 (2014-2018)</li>
         </ul>
       </section>
-      <section class="contact">
+      <section class="contact animate__animated animate__fadeInRight">
         <ul>
           <li>
             <a href="https://web3dapp.blog.csdn.net/" target="_blank">

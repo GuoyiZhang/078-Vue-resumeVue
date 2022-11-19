@@ -7,7 +7,7 @@
           <h2 class="section-title">项目经历</h2>
           <span class="section-title-r"></span>
         </header>
-        <div class="section-bd">
+        <div class="section-bd animate__animated animate__fadeInLeft">
 
           <!--经历:牙木科技股份有限公司-->
           <div class="item">
@@ -411,7 +411,7 @@
           <h2 class="section-title">技能</h2>
           <span class="section-title-r"></span>
         </header>
-        <div class="section-bd">
+        <div class="section-bd animate__animated animate__fadeInRight">
 
           <!--技能:区块链开发-->
           <div class="item">
@@ -564,7 +564,7 @@
           <h2 class="section-title">开源/项目</h2>
           <span class="section-title-r"></span>
         </header>
-        <div class="section-bd">
+        <div class="section-bd animate__animated animate__fadeInUp">
           以下是我的开源项目与学习总结，细节请点击链接查看文档（其他项目开发中，尚未开源，敬请期待）
 
           <!--项目:博客-->
@@ -632,7 +632,7 @@
           <h2 class="section-title">奖项/证书</h2>
           <span class="section-title-r"></span>
         </header>
-        <div class="section-bd">
+        <div class="section-bd animate__animated animate__fadeInUp">
 
           <!--技能:WEB后端开发-->
           <div class="item">
@@ -658,7 +658,7 @@
           <h2 class="section-title">致谢</h2>
           <span class="section-title-r"></span>
         </header>
-        <div class="section-bd">
+        <div class="section-bd section-bd animate__animated animate__fadeInUp">
           <!--技能:WEB后端开发-->
           <div class="item">
             <h2 style="font-weight: bold;line-height: 24px;margin-top: 10px">
