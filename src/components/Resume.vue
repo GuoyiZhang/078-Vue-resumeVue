@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="resume-div">
     <v-head></v-head>
     <main class="content">
       <!--基本信息-->

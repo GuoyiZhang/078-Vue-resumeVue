@@ -25,7 +25,7 @@ export default {
       this.getPdf("张国毅 - 区块链开发工程师|全栈工程师", document.querySelector('.content'))
     },
     getPdf(title, html) {
-      console.log("html", html);
+      // console.log("html", html);
       const h3 = document.createElement('h3')
       h3.innerText = "本PDF文件生成自 http://www.guoyi.pro";
       h3.style.cssText = "padding: 10px;\n" +
@@ -37,9 +37,35 @@ export default {
         "    z-index: 11111111;\n" +
         "    font-size: 40px;\n" +
         "    transform: rotate(315deg);"
-      html.appendChild(h3)
+
+      //  reset this page scroll
+      window.pageYOffset = 0;
+      document.documentElement.scrollTop = 0
+      document.body.scrollTop = 0
+
+      //  targetDom - target 2 img
+      const targetDom = html;
+      //  copyDom - copy dom from targetDom
+      const copyDom = html.cloneNode(true)
+      //  init the copyDom
+      copyDom.style.width = targetDom.scrollWidth + 'px'
+      copyDom.style.height = targetDom.scrollHeight + 'px'
+      copyDom.style.top = '0px'
+      copyDom.style.zIndex = '-1'
+      copyDom.appendChild(h3)
+
+      //如果你的页面里有很多个“temp”类的话  感觉这种不太适合 “classArr ”取出的是类数组
+      let classArr = copyDom.querySelectorAll(".animate__animated");
+      for (let i = 0; i < classArr.length; i++) {
+        const item = classArr[i];
+        item.classList.remove("animate__animated");
+      }
+
+      let resumeDiv = document.querySelector('.resume-div');
+      resumeDiv.appendChild(copyDom)
+
       // 使用html2canvas 转换html为canvas
-      html2Canvas(html, {
+      html2Canvas(copyDom, {
         allowTaint: true,
         taintTest: false,
         logging: false,
@@ -47,7 +73,7 @@ export default {
         dpi: window.devicePixelRatio * 3, // 将分辨率提高到特定的DPI 提高四倍
         scale: 3, // 按比例增加分辨率
         windowWidth: 1920,
-        windowHeight: html.offsetHeight,
+        windowHeight: copyDom.offsetHeight,
       }).then((canvas) => {
         var paper = "a4";
         var padding = 0;
@@ -95,6 +121,7 @@ export default {
         }
         // 保存文件
         pdf.save(`${title}.pdf`)
+        copyDom.parentNode.removeChild(copyDom)
       })
     }
   }
